@@ -1,0 +1,6 @@
+@mixin base-table { // Estilos compartilhados entre todas as tabelas
+    .data-row:hover{
+        background-color: lightgrey;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,27 @@
+body{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: grey;
+
+    header{
+        height: 10%;
+        background-color: lightgreen;
+    }
+
+    section{
+        height: 90%;
+        /*A estilização do angular segue uma estrutura hierarquica*/
+        /*Setar a altura da section com 90% limita o tamanho do componenente que sera renderizado no router-outlet a 90% da tela*/
+
+        /*VOCE NÃO CONSEGUE ESTILIZAR OQUE ESTÁ DENTRO DO ROUTER-OUTLET, EM VEZ DISSO VC TEM QUE ESTILIZAR OS COMPONENTES 
+        QUE O ROUTER-OUTLET RENDERIZA. (POR EXEMPLO VEJA EM 'base-de-dados/base-de-dados-component.scss')
+        */
+    }
+}

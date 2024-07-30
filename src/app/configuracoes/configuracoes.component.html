@@ -1,0 +1,37 @@
+<body class="bg-light p-3 d-flex justify-content-center ">
+   <div class = "w-75">
+      <div class="mt-5"> </div>
+      <h2>Configurações</h2>
+      <div class="card">
+         <div class="card-header d-flex justify-content-between align-items-center" style="padding-right: 0.5rem;">
+            <strong>Gestão de acessos</strong>
+            <button class="btn btn-warning add-user-button" (click)="abrirModalAdicionarUsuario()">
+            <span class="plus-icon">+</span> Adicionar usuário
+            </button>
+         </div>
+         <table class="m-3">
+            <thead>
+               <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Perfil</th>
+                  <th>Último login</th>
+                  <th>Ações</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let usuario of usuarios">
+                  <td>{{ usuario.nome }}</td>
+                  <td>{{ usuario.email }}</td>
+                  <td>{{ usuario.escopo }}</td>
+                  <td>{{ this.dateService.makeDisplayableDate(usuario.ultimoLogin!) }}</td>
+                  <td>
+                     <button class="btn btn-light mt-1 btn-sm" (click)="abrirModalEditarUsuario(usuario)" style="border: 1px solid gray;">Editar</button>
+                     <button class="btn btn-light m-2 mb-0 mt-1 btn-sm" (click)="deletarUsuario(usuario)" style="border: 1px solid gray;">Deletar</button>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</body>

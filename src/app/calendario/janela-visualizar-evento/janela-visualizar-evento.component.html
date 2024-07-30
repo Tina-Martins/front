@@ -1,0 +1,15 @@
+<div class="container p-3">
+    <h4>{{ evento.titulo }}</h4>
+    <div class="info">
+    <span class="icon">📅</span> {{ evento.data }}
+    </div>
+    <div class="info" *ngIf="evento.horaInicio">
+    <span class="icon">🕐</span> {{ evento.horaInicio }}
+    </div>
+    <div class="info">
+    <span class="icon"></span> {{ evento.local }}
+    </div>
+    <div class="info">
+    <span class="icon"></span> {{ evento.descricao }}
+    </div>
+  </div>

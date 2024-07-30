@@ -1,0 +1,12 @@
+body{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+
+    width: 100%;
+    height: 100%;
+
+    /*ESSE COMPONENTE OCUPA 90% DO TAMANHO DA TELA POR CONTA DOS ESTILOS DEFINIDOS EM app.component.scss*/
+    /*OS ESTILOS DEFINIDOS AQUI SÃO RELATIVOS A ESSE COMPONENTE SOMENTE*/
+
+    background-color: lightblue;
+}

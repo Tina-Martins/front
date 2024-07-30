@@ -1,0 +1,29 @@
+.container {
+    h3 {
+      color: #808080;
+      margin-bottom: 10px;
+    }
+  
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+      h4 {
+        margin-bottom: 10px;
+      }
+  
+      .info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+  
+        .icon {
+          margin-right: 8px;
+          font-size: 1.2em;
+          color: #7b68ee; // Purple color
+        }
+      }
+    }
+  }

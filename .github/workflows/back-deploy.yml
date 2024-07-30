@@ -1,0 +1,72 @@
+name: Deploy firebase functions
+on:
+  pull_request:
+    branches:
+      - production
+    types:
+      - closed
+
+jobs:
+  test:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+          node-version: '18'
+
+    - name: Cache Dependencies
+      uses: actions/cache@v4
+      id: cache-dependencies
+      with:
+        path: |
+          ~/.npm
+          ~/.cache/firebase
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install Dependencies
+      run: cd back/functions && npm install
+
+    - name: Run Tests
+      run: cd back/functions && npm test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+          node-version: '18'
+
+    - name: Cache Dependencies
+      uses: actions/cache@v4
+      id: cache-dependencies
+      with:
+        path: |
+          ~/.npm
+          ~/.cache/firebase
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Create credentials.json
+      run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" | base64 -d > credentials.json
+
+    - name: Set environment variable with path to credentials.json
+      run: echo "GOOGLE_APPLICATION_CREDENTIALS=$(readlink -f credentials.json)" >> $GITHUB_ENV
+
+    - name: Install Dependencies
+      run: cd back/functions && npm install
+
+    - name: Generate TSOA Specs and Routes
+      run: cd back/functions && npm run deploy

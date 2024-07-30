@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h4 class="modal-title">Atualização de Status</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.close()"></button>
+  </div>
+  
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="statusSelect" class="form-label">Status</label>
+      <select class="form-select" id="statusSelect" [(ngModel)]="newStatus">
+        <option *ngFor="let option of statusOptions" [ngValue]="option.value">{{ option.label }}</option>
+      </select>
+    </div>
+  
+    <div class="mb-3" *ngIf="newStatus === 'Encaminhado'">
+      <label for="encaminhadoParaSelect" class="form-label">Encaminhado para</label>
+      <select class="form-select" id="encaminhadoParaSelect" [(ngModel)]="encaminhadoPara">
+        <option *ngFor="let option of encaminhamentoOptions" [ngValue]="option">{{ option }}</option>
+      </select>
+    </div>
+  
+    <div class="mb-3">
+      <label for="comentarioTextarea" class="form-label">Comentário</label>
+      <textarea class="form-control" id="comentarioTextarea" rows="3" [(ngModel)]="comentario"></textarea>
+    </div>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="updateStatus()">Atualizar</button>
+  </div>

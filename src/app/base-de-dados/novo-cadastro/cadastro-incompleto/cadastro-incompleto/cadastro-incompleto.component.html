@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h4 class="modal-title">Informações de cadastro incompletas</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.close()"></button>
+</div>
+<div class="modal-body">
+  <p>Tem certeza que deseja salvar o cadastro sem completar todas as informações?</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Voltar e completar</button>
+  <button type="button" class="btn btn-outline-dark" (click)="onSaveIncomplete()">Salvar incompleto</button>
+</div>

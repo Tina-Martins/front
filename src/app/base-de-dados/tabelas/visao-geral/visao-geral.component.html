@@ -1,0 +1,22 @@
+<body>
+    <table class="table mt-1">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Demanda(s)</th>
+                <th scope="col">Status geral</th>
+                <th scope="col">Data do cadastro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="data-row" *ngFor="let acolhimento of this.acolhimentos" (click)="this.openFicha(acolhimento.id!)">
+                <td>{{ acolhimento.nome }}</td>
+                <td>
+                    <div *ngFor="let demanda of acolhimento.demandas">{{ demanda }}</div>
+                </td>
+                <td>{{ acolhimento.status }}</td>
+                <td>{{ this.dateService.makeDisplayableDate(acolhimento.criadoEm!) }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

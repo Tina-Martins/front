@@ -1,0 +1,51 @@
+<body class="bg-light p-3 d-flex justify-content-center ">
+   <div class = "w-75">
+      <div class="mt-5"> </div>
+      <h2>Calendário {{currentYear}}</h2>
+      <div class="card">
+         <div class="card-header d-flex justify-content-between align-items-center" style="padding-right: 0.5rem;">
+            <strong>Mês {{ currentMonth }}</strong>
+            <div>
+               <button class="btn btn-warning save-button" (click)="openNovoEventoModal()">Novo evento</button>
+            </div>
+         </div>
+         <div class="card-body">
+            <section >
+               <table>
+                  <thead>
+                     <tr>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                        <th>Sábado</th>
+                        <th>Domingo</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let week of calendarDays">
+                        <td *ngFor="let day of week">
+                           <div *ngIf="day.date !== 0" >
+                              {{ day.date }}
+                              <div class="evento-wrapper badge bg-warning" *ngFor="let event of day.events" (click)="openVisualizarEventoModal(event)"> 
+                              <span >{{ event.titulo }} — {{ event.horaInicio }}</span>
+                           </div>
+         </div>
+         </td>
+         </tr>
+         </tbody>
+         </table>
+         <div class="row justify-content-end">
+         <div class="col-auto"> <!-- col-auto para ajustar automaticamente ao conteúdo dos botões -->
+         <div class="btn-group mr-2 mt-2" role="group" aria-label="First group">
+         <button class="btn btn-dark" (click)="previousMonth()">Anterior</button>
+         <button class="btn btn-dark" (click)="nextMonth()">Próximo</button>
+         </div>
+         </div>
+         </div>
+         </section>
+      </div>
+   </div>
+   </div>
+</body>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Seu Título Aqui</title>
+      <!-- Adicione os links para os estilos do Bootstrap aqui -->
+   </head>
+   <body class="bg-light w-100">
+      <header class="h-auto border border-secondary">
+         <nav class="navbar navbar-expand-lg p-0" style="background-color: #9f89e4;">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+               <!-- Modificação aqui -->
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                     <li class="nav-item"><a routerLink="/base-de-dados" class="nav-link m-1 text-white" routerLinkActive="active">Base de dados</a></li>
+                     <li class="nav-item"><a routerLink="/calendario" class="nav-link m-1 text-white" routerLinkActive="active">Calendário</a></li>
+                     <li class="nav-item"><a routerLink="/configuracoes" class="nav-link m-1 text-white" routerLinkActive="active">Configurações</a></li>
+                  </ul>
+               </div>
+               <div class="p-2">
+                  <div class="bg-white rounded-circle">
+                     <img src="/assets/logo.png" alt="Logo" class="img-fluid" style="width: 32px; height: 32px;">
+                  </div>
+               </div>
+               <span class="text-white"> SIT — Sistema Integrado da Tina</span> <!-- Adicionando a string à direita -->
+            </div>
+         </nav>
+      </header>
+      <section>
+         <router-outlet></router-outlet>
+      </section>
+   </body>
+</html>

@@ -1,0 +1,91 @@
+<div class="modal-header">
+    <h4 class="modal-title">Novo evento</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="cancel()"></button>
+</div>
+
+<div class="modal-body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="titulo" class="m-2 mb-0">Título:</label>
+                    <input type="text" id="titulo" name="titulo" [(ngModel)]="evento.titulo" required class="form-control" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="data" class="m-2 mb-0">Data:</label>
+                    <input type="date" id="data" name="data" [(ngModel)]="evento.data" required class="form-control" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" *ngIf="!evento.diaTodo">
+            <div class="col">
+                <div class="form-group">
+                    <label for="horaInicio" class="m-2 mb-0">Horário de início:</label>
+                    <input type="time" id="horaInicio" name="horaInicio" [(ngModel)]="evento.horaInicio" class="form-control" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="horaFim" class="m-2 mb-0">Horário de final:</label>
+                    <input type="time" id="horaFim" name="horaFim" [(ngModel)]="evento.horaFim" class="form-control" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="checkbox" id="diaTodo" name="diaTodo" [(ngModel)]="evento.diaTodo" />
+                    <label for="diaTodo" class="m-2 mb-0">Dia todo</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="local" class="m-2 mb-0">Local:</label>
+                    <input type="text" id="local" name="local" [(ngModel)]="evento.local" required class="form-control" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="descricao" class="m-2 mb-0">Descrição:</label>
+                    <textarea id="descricao" name="descricao" [(ngModel)]="evento.descricao" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <button type="button" class="btn btn-dark mt-2" disabled>
+                        <span class="clip-icon">📎</span> Adicionar anexo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-outline-dark" (click)="cancel()">Cancelar</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-outline-dark float-end" (click)="save()">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>

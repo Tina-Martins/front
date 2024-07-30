@@ -1,0 +1,18 @@
+<body>
+    <div class="modal-header">
+        <h4 class="modal-title">{{this.stateService.getCurrentTipoDemanda()?.toString()}} - Atribuir demanda</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.close()"></button>
+    </div>
+    
+    <div class="modal-body">
+        <select id="usuario" name="usuario" [(ngModel)]="selectionIndex">
+            <option *ngFor="let usuario of usuarios; let i = index" [value]="i">{{usuario.nome}}</option>
+        </select>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()"> Cancelar </button>
+        <button type="button" class="btn btn-outline-dark" (click)="save()"> Salvar </button>
+    </div>
+
+</body>

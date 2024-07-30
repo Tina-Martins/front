@@ -1,0 +1,22 @@
+<body>
+    <table class="table mt-1">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Status - {{this.tipoDemanda}}</th>
+                <th scope="col">Data do cadastro</th>
+                <th scope="col">Última atualização</th>
+                <th scope="col">Profissional responsável</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let acolhimento of this.acolhimentos" (click)="this.openFicha(acolhimento.id!)">
+                <td>{{ acolhimento.nome }}</td>
+                <td>{{ acolhimento_demanda?.get(acolhimento.id!)?.status }}</td>
+                <td>{{ this.dateService.makeDisplayableDate(acolhimento_demanda?.get(acolhimento.id!)?.criadoEm!) }}</td>
+                <td>{{ this.dateService.makeDisplayableDate(acolhimento_demanda?.get(acolhimento.id!)?.atualizadoEm!) }}</td>
+                <td>{{ acolhimento_demanda?.get(acolhimento.id!)?.usuarioNome || '-' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

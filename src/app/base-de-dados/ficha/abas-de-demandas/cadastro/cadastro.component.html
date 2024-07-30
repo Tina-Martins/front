@@ -1,0 +1,70 @@
+<body>
+   <div id="dados-pessoais">
+      <hr>
+      <h3 class="pb-2" >Dados pessoais</h3>
+      <div class="data-row row">
+         <strong class="col-md-4">Nome completo</strong>
+         <span class="col-md-8">{{this.acolhimento?.nome}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Data de nascimento</strong>
+         <span class="col-md-8">{{this.dateService.makeDisplayableDate(this.acolhimento?.dataNascimento!)}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Documento</strong>
+         <span class="col-md-8">{{this.acolhimento?.documento}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Raça/cor</strong>
+         <span class="col-md-8">{{this.acolhimento?.racaCor}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Orientação sexual</strong>
+         <span class="col-md-8">{{this.acolhimento?.orientacaoSexual}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Escolaridade</strong>
+         <span class="col-md-8">{{this.acolhimento?.escolaridade}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Número de filhos</strong>
+         <span class="col-md-8">{{this.acolhimento?.qtdfilhos}}</span>
+      </div>
+   </div>
+   <div id="dados-de-contato">
+      <hr>
+      <h3 class="pb-2" >Dados de contato</h3>
+      <div class="data-row row">
+         <strong class="col-md-4">E-mail</strong>
+         <span class="col-md-8">{{this.acolhimento?.email}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Telefone</strong>
+         <span class="col-md-8">{{this.acolhimento?.telefone}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Cidade</strong>
+         <span class="col-md-8">{{this.acolhimento?.cidade}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Bairro</strong>
+         <span class="col-md-8">{{this.acolhimento?.bairro}}</span>
+      </div>
+   </div>
+   <div id="demanda">
+      <div id="header">
+         <hr>
+         <h3 class="pb-2" >Demanda</h3>
+         <!-- <button class="btn btn-dark">Adicionar informações</button> -->
+      </div>
+      <p>{{this.acolhimento?.descricao}}</p>
+      <div class="data-row row">
+         <strong class="col-md-4">Tipo de demanda</strong>
+         <span class="col-md-8">{{this.acolhimento?.demandas?.join(" | ")}}</span>
+      </div>
+      <div class="data-row row">
+         <strong class="col-md-4">Data de contato</strong>
+         <span class="col-md-8">{{this.dateService.makeDisplayableDate(this.acolhimento?.criadoEm!)}}</span>
+      </div>
+   </div>
+</body>

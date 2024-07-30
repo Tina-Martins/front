@@ -1,0 +1,162 @@
+<body>
+   <div class = "mt-1 card">
+      <header>
+         <div class="card-header d-flex justify-content-between align-items-center" style="padding-right: 0.5rem;">
+            <strong>Novo cadastro</strong>
+            <div>
+               <button class="btn btn-secondary cancel-button m-1 mt-0 mb-0" (click)="cancel()">Cancelar</button>
+               <button class="btn btn-warning save-button" (click)="save()">
+               <span class="check-icon">✓</span> Salvar
+               </button>
+            </div>
+         </div>
+      </header>
+      <form #acolhimentoForm="ngForm" class="needs-validation" novalidate>
+         <div class="p-3 pb-2 pt-2 bg-light bg-gradient">Dados pessoais</div>
+         <hr class="p-0 m-0">
+         <div class="p-3 pt-2">
+            <div class="form-section">
+               <div class="form-row d-flex">
+                  <div class="form-group col-md-6 p-2">
+                     <label for="nomeCompleto">Nome completo:</label>
+                     <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" [(ngModel)]="acolhimento.nome" required />
+                     <div *ngIf="acolhimentoForm.controls['nomeCompleto']?.invalid && (acolhimentoForm.controls['nomeCompleto']?.dirty || acolhimentoForm.controls['nomeCompleto']?.touched)" class="error-message text-danger">
+                        Nome completo é obrigatório.
+                     </div>
+                  </div>
+                  <div class="form-group col-md-6 p-2">
+                     <label for="dataNascimento">Data de nascimento:</label>
+                     <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" [(ngModel)]="acolhimento.dataNascimento"/>
+                     <div *ngIf="!this.acolhimento.dataNascimento && acolhimentoForm.controls['dataNascimento']?.touched" class="error-message text-danger">
+                        Data de nascimento é obrigatória
+                     </div>
+                  </div>
+               </div>
+               <div class="form-row d-flex">
+                  <div class="form-group col-md-4 p-2">
+                     <label for="tipoDocumento">Tipo documento:</label>
+                     <select class="form-control" id="tipoDocumento" name="tipoDocumento" [(ngModel)]="acolhimento.documentoTipo" required>
+                     <option *ngFor="let tipo of acolhimentoDocumentoTipos" [value]="tipo">
+                     {{ tipo }}
+                     </option>
+                     </select>
+                  </div>
+                  <div class="form-group col-md-4 p-2">
+                     <label for="documento">Documento:</label>
+                     <input type="text" class="form-control" id="documento" name="documento" [(ngModel)]="acolhimento.documento" required/>
+                  </div>
+                  <div class="form-group col-md-4 p-2">
+                     <label for="documentoEmissor">Órgão emissor:</label>
+                     <input type="text" class="form-control" id="documentoEmissor" name="documentoEmissor" [(ngModel)]="acolhimento.documentoEmissor" required/>
+                  </div>
+               </div>
+               <div class="form-row d-flex">
+                  <div class="form-group col-md-6 p-2">
+                     <label for="racaCor">Raça/cor:</label>
+                     <select class="form-control" id="racaCor" name="racaCor" [(ngModel)]="acolhimento.racaCor" required>
+                     <option *ngFor="let raca of acolhimentoRacaCores" [value]="raca">
+                     {{ raca }}
+                     </option>
+                     </select>
+                  </div>
+                  <div class="form-group col-md-6 p-2">
+                     <label for="orientacaoSexual">Orientação sexual:</label>
+                     <select class="form-control" id="orientacaoSexual" name="orientacaoSexual" [(ngModel)]="acolhimento.orientacaoSexual" required>
+                     <option *ngFor="let orientacao of acolhimentoOrientacaoSexuais" [value]="orientacao">
+                     {{ orientacao }}
+                     </option>
+                     </select>
+                  </div>
+               </div>
+               <div class="form-row d-flex">
+                  <div class="form-group col-md-6 p-2">
+                     <label for="escolaridade">Escolaridade:</label>
+                     <select class="form-control" id="escolaridade" name="escolaridade" [(ngModel)]="acolhimento.escolaridade" required>
+                     <option *ngFor="let escolaridade of acolhimentoEscolaridades" [value]="escolaridade">
+                     {{ escolaridade }}
+                     </option>
+                     </select>
+                  </div>
+                  <div class="form-group col-md-6 p-2">
+                     <label for="qtdFilhos">Número de filhos:</label>
+                     <input type="number" class="form-control" id="qtdFilhos" name="qtdFilhos" [(ngModel)]="acolhimento.qtdfilhos" required/>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="p-0 m-0">
+         <div class="p-3 pb-2 pt-2 bg-light bg-gradient">Dados de contato</div>
+         <hr class="p-0 m-0">
+         <div class="p-3 pt-2">
+            <div class="form-section">
+               <div class="form-row d-flex">
+                  <div class="form-group col-md-6 p-2">
+                     <label for="email">E-mail:</label>
+                     <input type="email" class="form-control" id="email" name="email" [(ngModel)]="acolhimento.email" required/>
+                  </div>
+                  <div class="form-group col-md-6 p-2">
+                     <label for="telefone">Telefone:</label>
+                     <input type="tel" class="form-control" id="telefone" name="telefone" [(ngModel)]="acolhimento.telefone" required/>
+                  </div>
+               </div>
+               <div class="form-row d-flex">
+                  <div class="form-group col-md-6 p-2">
+                     <label for="cidade">Cidade:</label>
+                     <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="acolhimento.cidade" required/>
+                  </div>
+                  <div class="form-group col-md-6 p-2">
+                     <label for="bairro">Bairro:</label>
+                     <input type="text" class="form-control" id="bairro" name="bairro" [(ngModel)]="acolhimento.bairro" required/>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="p-0 m-0">
+         <div class="p-3 pb-2 pt-2 bg-light bg-gradient">Caracterização da demanda</div>
+         <hr class="p-0 m-0">
+         <div class="p-3 pt-2">
+            <div class="form-section">
+               <div class="form-row d-flex">
+                  <div class="form-group col-md-6 p-2">
+                     <label for="origem">Origem:</label>
+                     <select class="form-control" id="origem" name="origem" [(ngModel)]="acolhimento.origem" required>
+                     <option *ngFor="let origem of acolhimentoOrigens" [value]="origem">
+                     {{ origem }}
+                     </option>
+                     </select>
+                  </div>
+                  <div class="form-group col-md-6 p-2">
+                     <label for="servicoReferencia">Serviço de referência:</label>
+                     <select class="form-control" id="servicoReferencia" name="servicoReferencia" [(ngModel)]="acolhimento.servicoReferencia" required>
+                     <option *ngFor="let servico of acolhimentoServicosReferencia" [value]="servico">
+                     {{ servico }}
+                     </option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="p-0 m-0">
+         <div class="p-3 pb-2 pt-2 bg-light bg-gradient">Demanda</div>
+         <hr class="p-0 m-0">
+         <div class="p-3 pt-2">
+            <div class="form-group p-2">
+               <div *ngFor="let demanda of acolhimentoDemandas">
+                  <div class="form-check">
+                     <input class="form-check-input" type="checkbox" [id]="demanda" [name]="demanda" [(ngModel)]="selectedDemandas[demanda]"/>
+                     <label class="form-check-label" [for]="demanda">{{ demanda }}</label>
+                  </div>
+               </div>
+               <div *ngIf="!isAnyDemandaSelected() && this.tried_submit" class="error-message">
+                  Selecione pelo menos uma demanda.
+               </div>
+            </div>
+            <div class="form-group p-2">
+               <label for="descricao">Descrição:</label>
+               <textarea class="form-control" id="descricao" name="descricao" [(ngModel)]="acolhimento.descricao" required></textarea>
+            </div>
+         </div>
+      </form>
+   </div>
+   <hr class="m-3">
+</body>

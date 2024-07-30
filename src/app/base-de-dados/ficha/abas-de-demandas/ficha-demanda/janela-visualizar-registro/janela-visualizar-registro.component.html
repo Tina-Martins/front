@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h4 class="modal-title">Registro</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.close()"></button>
+</div>
+
+<div class="modal-body">
+    <div class="form-group">
+        <label for="nomeProfissional">Profissional responsável:</label>
+        <input type="text" id="nomeProfissional" name="nomeProfissional" value="{{currentDemanda?.usuarioNome}}" disabled/>
+    </div>
+
+    <div class="form-group">
+        <label for="servico">Serviço:</label>
+        <input type="text" id="servico" name="servico" value="{{currentDemanda?.tipo}}" disabled/>
+    </div>
+
+    <div class="form-group">
+        <label for="dataRegistro">Data do registro:</label>
+        <input type="date" id="dataRegistro" name="dataRegistro" value="{{dataRegistro}}" disabled/>
+    </div>
+
+    <div class="form-group">
+        <label for="registro">Registro:</label>
+        <textarea id="registro" name="registro" [(ngModel)]="descricao" required></textarea>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Cancelar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="save()">Salvar edição</button>
+</div>
