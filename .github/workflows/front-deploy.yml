@@ -41,11 +41,14 @@ jobs:
         run: echo "GOOGLE_APPLICATION_CREDENTIALS=$(readlink -f credentials.json)" >> $GITHUB_ENV
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          npm list cypress
 
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v6
         with:
+          install: true
           start: npm start
           wait-on: 'http://localhost:4200'
           record: true
