@@ -1,12 +1,75 @@
-# SIT - Sistema Integrado da Tina (Frontend)
-Este repositório contém o código-fonte do backend do Sistema Integrado da Tina (SIT), uma aplicação para gerenciamento da Casa de Referência da Mulher Tina Martins, dedicada ao acolhimento de mulheres em situação de violência doméstica em Belo Horizonte.
+# Nuxt Minimal Starter
 
-## Visão Geral
-O SIT é uma ferramenta essencial para facilitar o acompanhamento das acolhidas da casa, fornecendo uma plataforma centralizada para gerenciar os diversos tipos de atendimentos e auxílios que as mulheres podem receber, incluindo suporte psicológico, jurídico e assistência social. 
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Funcionalidades
-O SIT tem como objetivo principal oferecer um cadastro das mulheres acolhidas pela casa, permitindo registros dos atendimentos e serviços prestados. Além disso, o sistema proporciona uma gestão da agenda da casa, possibilitando o cadastro de eventos em um calendário, com especificação de uma janela de horários, simplificando assim a administração da disponibilidade dos espaços e eventos.
+## Setup
 
-## Tecnologias Utilizadas
-- Angular.js: Framework frontend de JavaScript para construção de aplicações.
-- Firebase: Plataforma de desenvolvimento de aplicativos móveis e da web da Google, fornecendo serviços de hospedagem e banco de dados em tempo real.
+Make sure to install dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

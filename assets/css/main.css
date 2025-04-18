@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@import "./tokens/branding.css";
+@import "./tokens/colors.css";
+@import "./tokens/root.css";
+
+@import "./typography.css";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
