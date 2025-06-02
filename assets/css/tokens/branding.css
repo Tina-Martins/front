@@ -1,0 +1,11 @@
+:root {
+  --brand-primary: #59459E;
+  --brand-secondary: #F2D452;
+  --brand-luta: #CC334A;
+  --brand-atencao: var(--brand-luta);
+  --brand-aconchego: #AD8259;
+  --brand-seriedade: var(--brand-aconchego);
+  --brand-juventude: #F28261;
+  --brand-leveza: var(--brand-juventude);
+
+}
