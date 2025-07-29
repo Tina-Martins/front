@@ -1,15 +1,80 @@
-@import "tailwindcss";
-@import "@nuxt/ui";
+/* ===== IMPORTS DO FRAMEWORK PRIMEIRO ===== */
+/* Tailwind carregado primeiro para ter máxima prioridade */
 
-@import "./tokens/branding.css";
-@import "./tokens/colors.css";
-@import "./tokens/root.css";
+@import 'tailwindcss';
+@import '@nuxt/ui';
 
-@import "./typography.css";
+@import './tokens/branding.css';
+@import './tokens/colors.css';
+@import './tokens/root.css';
+
+@import './typography.css';
+
+/* ===== RESET GLOBAL ESPECÍFICO ===== */
+/* Aplicado DEPOIS para resetar apenas o necessário sem interferir no Tailwind */
 
 * {
   box-sizing: border-box;
-  padding: 0;
+}
+
+/* Reset apenas para elementos do browser que têm margin/padding padrão */
+html,
+body {
   margin: 0;
+  padding: 0;
+}
+
+/* Reset para elementos de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+/* Reset para listas */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Reset para elementos de formulário */
+input,
+button,
+textarea,
+select {
   border: 0;
+  background: none;
+  font: inherit;
+}
+
+/* Reset para imagens */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Reset para tabelas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Acessibilidade */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
 }
