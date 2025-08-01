@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+.nuxt/
+.output/
+dist/
+
+# Logs
+*.log*
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Generated files
+.git/
+.DS_Store
+.vscode/
+.env* 

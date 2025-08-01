@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="headline-large bg-[var(--color-semantic-success-4)]">Atendimentos</div>
+    <div class="headline-large bg-[var(--color-neutral-99)]">Atendimentos</div>
     <ul v-if="data">
       <li v-for="item in atendimentos ?? []" :key="item.id" :data-id="item.id">
         {{ item.titulo }}
