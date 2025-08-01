@@ -1,31 +1,36 @@
 <template>
-  <div>
-    <div class="headline-large bg-[var(--color-neutral-99)]">Atendimentos</div>
-    <ul v-if="data">
-      <li v-for="item in atendimentos ?? []" :key="item.id" :data-id="item.id">
-        {{ item.titulo }}
-        {{ item.atualizadoEm }}
-        {{ item.local }}
-      </li>
-    </ul>
+  <div class="pl-24 pr-18">
+    <LayoutHeader :buttons="headerButtons" @button-click="handleButtonClick" />
+    <div class="p-4">
+      <p>Página de Atendimentos</p>
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { definePageMeta } from '#imports';
-import type { ApiResponse } from '~/interfaces/api-response';
+<script setup lang="ts">
+// Configuração dos botões do header para esta página
+const headerButtons = [
+  { id: 'edit', label: 'Editar cadastro', outline: true },
+  { id: 'create', label: 'Criar cadastro', outline: false },
+];
 
-const { data } = await useFetch<ApiResponse>('/api/eventos')
+// Manipular os clicks dos botões
+const handleButtonClick = (buttonId: string | number) => {
+  console.log('Botão clicado:', buttonId);
 
-const atendimentos = computed(() => data.value?.data ?? []);
-
-definePageMeta({
-  layout: 'default'
-})
+  switch (buttonId) {
+    case 'edit':
+      // Lógica para editar cadastro
+      console.log('Editando cadastro...');
+      break;
+    case 'create':
+      // Lógica para criar cadastro
+      console.log('Criando cadastro...');
+      break;
+    default:
+      console.log('Ação não definida para:', buttonId);
+  }
+};
 </script>
 
-<style>
-
-</style>
-
-data.data
+<style></style>
